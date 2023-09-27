@@ -5,5 +5,5 @@ void main(){
 
   // ignore: unnecessary_type_check
   print(num is int);
-  print(name is! int);
+  print(name is int);
 }

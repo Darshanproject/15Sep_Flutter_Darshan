@@ -3,8 +3,8 @@ void main(){
   String name="Suraj";
   double num1=100.50;
   bool choose=true;
-  var name1="Darshan";
-  var num3=100.5;
+  var name1=100.5;
+  var num3="Darshan";
   var num4=50;
   print(num);
   print(name);
