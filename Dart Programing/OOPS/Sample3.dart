@@ -8,7 +8,7 @@ class Person{
 }
 
 void main(){
-  var a,b;
+  var a,b;  
   print("Enter your first number here :");
   a=int.parse(stdin.readLineSync()!);
   print("Enter your Second number here :");
