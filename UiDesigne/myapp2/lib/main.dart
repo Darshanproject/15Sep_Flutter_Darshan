@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:myapp2/Screen/Second_page.dart';
+import 'package:myapp2/Screen/ThirdScreen.dart';
 
 void main(){
   runApp(MyApp());
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      home: Second_Screen(),
+      home: Third_Screen(),
     );
   }
 }
