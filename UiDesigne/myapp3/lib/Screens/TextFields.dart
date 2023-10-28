@@ -16,9 +16,11 @@ class _TextFiledsState extends State<TextFileds> {
     return  Scaffold(
       appBar: AppBar(title: Text("Text Files Pro")),
       body: Container(
+        height: MediaQuery.of(context).size.height,
         color: yellow,
         margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
           children: [
             TextField(),
             SizedBox(
