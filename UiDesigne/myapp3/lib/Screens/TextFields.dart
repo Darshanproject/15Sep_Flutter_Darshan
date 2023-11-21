@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp3/Const/Color.dart';
 import 'package:myapp3/Const/String.dart';
 import 'package:myapp3/Const/images.dart';
+import 'package:myapp3/Screens/Screens.dart';
 
 class TextFileds extends StatefulWidget {
   const TextFileds({super.key});
@@ -11,6 +12,7 @@ class TextFileds extends StatefulWidget {
 }
 
 class _TextFiledsState extends State<TextFileds> {
+  TextEditingController Fname=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -22,32 +24,39 @@ class _TextFiledsState extends State<TextFileds> {
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TextField(),
+            // TextField(),
             SizedBox(
               height: 24,
             ),
             TextField(
+              controller: Fname,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24)
                 ),
-                hintText: name,
-                labelText: name,
-                prefixIcon: IconButton(onPressed: (){
-                  print("Button has been Clicked");
-                }, icon: Icon(Icons.edit)),
-                suffixIcon: Icon(Icons.delete)
+                // hintText: name,
+                // labelText: name,
+                // prefixIcon: IconButton(onPressed: (){
+                //   print("Button has been Clicked");
+                // }, icon: Icon(Icons.edit)),
+              //  suffixIcon: Icon(Icons.delete)
               ),
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: age,
-                hintText: age
-              ),
+            // TextFormField(
+            //   decoration: InputDecoration(
+            //     labelText: age,
+            //     hintText: age
+            //   ),
 
+            // ),
+            // Image.network(img1),
+            // Image.asset(img2)
+            SizedBox(
+              height: 50,
             ),
-            Image.network(img1),
-            Image.asset(img2)
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Screens(Fname: Fname.text.toString())));
+            }, child: Text("Login"))
           ],
         ),
       ),
