@@ -4,6 +4,7 @@ import 'package:appg/Screens/Home%20Screen/Home_Screen.dart';
 import 'package:appg/Screens/Home%20Screen/Second_Screen.dart';
 import 'package:appg/Screens/Home%20Screen/Third_Screen.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Bottom_Screen extends StatefulWidget {
   const Bottom_Screen({super.key});
@@ -27,6 +28,9 @@ class _Bottom_ScreenState extends State<Bottom_Screen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(
+        title:"Bottom naivagtion".text.make(),
+      ),
       body: Center(
         child:  Screenlist.elementAt(_Selctedindex),
       ),
@@ -44,7 +48,9 @@ class _Bottom_ScreenState extends State<Bottom_Screen> {
       currentIndex: _Selctedindex,
       onTap: _ontap,
       selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.amber,
       backgroundColor: Colors.blue,
+      type: BottomNavigationBarType.fixed,
       ),
       
     );

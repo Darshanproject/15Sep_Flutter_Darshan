@@ -5,13 +5,11 @@ class Third_Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Center(
+    return  Center(
         child: Container(
           color: Colors.amber,
           child: Text("Third Screen"),
         ),
-      ),
-    );
+      );
   }
 }

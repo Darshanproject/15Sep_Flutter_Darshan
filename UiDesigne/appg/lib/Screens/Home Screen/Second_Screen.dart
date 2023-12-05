@@ -5,13 +5,11 @@ class Second_Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Center(
+    return  Center(
         child: Container(
           color: Colors.blue,
           child: Text("Second Screen"),
         ),
-      ),
-    );
+      );
   }
 }
