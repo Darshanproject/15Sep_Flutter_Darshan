@@ -15,7 +15,7 @@ class Splash_Screen extends StatefulWidget {
 
 class _Splash_ScreenState extends State<Splash_Screen> {
   chnageScreen(){
-    Future.delayed(Duration(milliseconds: 300),(){
+    Future.delayed(Duration(seconds: 120),(){
         Get.to(()=>Login_Screen());
     });
   }
@@ -27,14 +27,15 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   }
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: redColor,
+      // backgroundColor: redColor,
       body: BG_widget(
+        
         child: Center(
           child: Column(
             children: [
               Align(
                 alignment: Alignment.topLeft,
-                child: Image.asset(icSplashBg,width: 300,),
+                child: Image.asset(icSplashBg,width: 300),
               ),
               20.heightBox,
               Apllo_Widget(),
@@ -42,9 +43,9 @@ class _Splash_ScreenState extends State<Splash_Screen> {
               appname.text.fontFamily(bold).size(22).white.make(),
               5.heightBox,
               Spacer(),
-              credits.text.white.fontFamily(semibold).make(),
+              credits.text.color(redColor).fontFamily(semibold).make(),
               30.heightBox, 
-              appversion.text.white.make()
+              appversion.text.color(redColor).make()
             ],
           ),
         ),

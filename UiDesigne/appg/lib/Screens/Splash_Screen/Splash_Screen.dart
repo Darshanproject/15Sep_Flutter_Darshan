@@ -1,6 +1,4 @@
-
 import 'dart:async';
-
 import 'package:appg/Screens/Home%20Screen/bottom.dart';
 import 'package:flutter/material.dart';
 

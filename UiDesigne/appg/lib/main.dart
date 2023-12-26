@@ -1,4 +1,5 @@
 import 'package:appg/Screens/Form.dart';
+import 'package:appg/Screens/Home%20Screen/bottom.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      home: Form_Screen(),
+      home: Bottom_Screen(),
     );
   }
 }
