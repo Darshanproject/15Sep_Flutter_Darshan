@@ -17,10 +17,11 @@ class _NotesScreenState extends State<NotesScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Notes"),
         centerTitle: true,
+        backgroundColor: Colors.blueGrey,
       ),
       floatingActionButton: FloatingActionButton(onPressed: () async {
   await Navigator.push(context, MaterialPageRoute(builder: (context)=>NoteScreen())
@@ -30,7 +31,7 @@ class _NotesScreenState extends State<NotesScreen> {
           
         });
       } ,child: Icon(Icons.add,size: 34,)),
-      body: FutureBuilder<List<Note>?>(
+      body: Note != null ? FutureBuilder<List<Note>?>(
         future: DatabaseHelper.getAllNotes(),
         builder: (context ,AsyncSnapshot<List<Note>?> snapshot) {
            if(snapshot.connectionState == ConnectionState.waiting){
@@ -41,7 +42,7 @@ class _NotesScreenState extends State<NotesScreen> {
             if(snapshot.data != null){
               return ListView.builder(
                 itemBuilder:(context ,index)=>NoteWidget(note: snapshot.data![index], onTap: ()async{
-                  await Navigator.push(context, MaterialPageRoute(builder: (context)=>NoteScreen()));
+                  await Navigator.push(context, MaterialPageRoute(builder: (context)=>NoteScreen(note: snapshot.data![index],)));
                 }, onLongPress: ()async {
                   showDialog(context: context, builder: (context){
                     return AlertDialog(
@@ -64,11 +65,11 @@ class _NotesScreenState extends State<NotesScreen> {
                   itemCount: snapshot.data!.length,
                  );
             }
-            return Center(child: Text("Khuch To dal Idhar",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Colors.black),),);
+         
           }
           return SizedBox.shrink();
         },
-         ),
-    );
+         ) : Center(child: Text("Khuch To dal Idhar",style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color: Colors.black),),
+    ));
   }
 }

@@ -80,6 +80,7 @@ final titleController = TextEditingController();
                 final Note model = Note(id: note?.id, title: title, description: description);
                 if(note == null){
                   await DatabaseHelper.addNote(model);
+                  SnackBar(content: Text("DATA ADDED"),backgroundColor: Colors.amber,duration: Duration(milliseconds: 12),);
                 }else{
                   await DatabaseHelper.updateNote(model);
                 }
