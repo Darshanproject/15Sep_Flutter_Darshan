@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 String? stringresponse;
 Map? mapresposne;
-
+Map? dataresposne;
 class Home_Page extends StatefulWidget {
   const Home_Page({super.key});
 
@@ -18,6 +18,7 @@ class _Home_PageState extends State<Home_Page> {
     if(response.statusCode == 200){
       stringresponse = response.body;
       mapresposne = json.decode(stringresponse.toString());
+      dataresposne = mapresposne!["data"];
     }else if(response.statusCode == 400){
         return Container(
           color: Colors.red,
@@ -45,7 +46,7 @@ class _Home_PageState extends State<Home_Page> {
         child: Align(
           alignment: Alignment.center,
           // ignore: prefer_const_constructors
-          child: mapresposne == 200 ? const CircularProgressIndicator() :Text(mapresposne!['name'].toString(),style: TextStyle(
+          child: Text(dataresposne!['email'].toString(),style: TextStyle(
             fontSize: 24,fontWeight: FontWeight.w600
           ),)),
       )),

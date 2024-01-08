@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:myapi/Screens/Home_page.dart';
-import 'package:myapi/Screens/List.dart';
-void main(){
+import 'package:get/get.dart';
+import 'package:mysocitey/Auth_Screen/Login.dart';
+
+void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ListViewExample(),
+    return  GetMaterialApp(
+      home: Login_Screen(),
     );
   }
 }
-
