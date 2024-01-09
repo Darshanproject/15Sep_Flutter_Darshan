@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mysocitey/Auth_Screen/Login.dart';
+
+import 'package:mysocitey/View.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-      home: Login_Screen(),
-    );
+        home: View_Screen(),
+          );
   }
 }
