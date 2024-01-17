@@ -1,13 +1,34 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-class Update_Screen extends StatelessWidget {
+import 'package:http/http.dart' as http;
+class Update_Screen extends StatefulWidget {
    Update_Screen({super.key,required this.name,required this.email});
- 
-  TextEditingController name = TextEditingController();
+ final String name;
+ final String email;
+  
 
-  TextEditingController email =TextEditingController();
+  @override
+  State<Update_Screen> createState() => _Update_ScreenState();
+}
 
+class _Update_ScreenState extends State<Update_Screen> {
+  TextEditingController cname = TextEditingController(text: widget.name);
+
+  TextEditingController cemail =TextEditingController();
+
+   Future<void> updateData() async {
+    final response = await http.put(
+      Uri.parse('https://database20810.000webhostapp.com/FlutterCrude/update.php'), // Replace with your API endpoint
+      body: jsonEncode({'name': cname,'emai':cemail}),
+    );
+    if (response.statusCode == 200) {
+        print("Data Updated Successfully");
+    }else{
+      print("Failed to update data");
+    }
+   }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -20,7 +41,7 @@ class Update_Screen extends StatelessWidget {
           Padding(
             padding:EdgeInsets.symmetric(horizontal:  10 ,vertical: 20),
             child: TextField(
-              controller: name,
+              controller: cname,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12)
@@ -31,7 +52,7 @@ class Update_Screen extends StatelessWidget {
              Padding(
             padding:EdgeInsets.symmetric(horizontal:  10 ,vertical: 20),
             child: TextField(
-              controller: email,
+              controller: cemail,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12)
@@ -41,7 +62,7 @@ class Update_Screen extends StatelessWidget {
              ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal:  10,vertical: 20),
-              child: ElevatedButton(onPressed: (){},child:email == null && name == null ? Text("Edit"):Text("Save"),),
+              child: ElevatedButton(onPressed: (){},child:widget.email == null && widget.name == null ? Text("Edit"):Text("Save"),),
               )
         ],
       ),
