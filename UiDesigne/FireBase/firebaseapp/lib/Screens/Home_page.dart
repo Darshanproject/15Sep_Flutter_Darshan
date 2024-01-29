@@ -1,4 +1,5 @@
 import 'package:firebaseapp/Screens/Add.dart';
+import 'package:firebaseapp/Screens/Students_List.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,32 +15,7 @@ class _Home_PageState extends State<Home_Page> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: ListView(
-        children: [
-          Card(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: CircleAvatar(
-                  minRadius: 25,
-                  backgroundColor: Colors.purple[100],
-                ),
-              ),
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Vansh"),
-                    Text("vansh@gmail.com")
-                  ],
-                ),
-              )
-            ],
-            ),
-          )
-        ],
-      ),
+      body: Students_List(),
       appBar: AppBar(
         title: Row(
           children: [
