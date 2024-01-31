@@ -1,4 +1,6 @@
+// ignore_for_file: unused_import
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebaseapp/Screens/Update_Screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -13,7 +15,7 @@ class Students_List extends StatefulWidget {
 class _Students_ListState extends State<Students_List> {
   final Stream<QuerySnapshot> studentsstream = FirebaseFirestore.instance.collection('students').snapshots();
 
-  CollectionReference students = FirebaseFirestore.instance.collection('students');
+  CollectionReference students = FirebaseFirestore.instance.collection('Students');
   //Method for Deleting data
   Future<void> delteuser(id){
     return students.doc(id).delete().then((value) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Delted Successfully"),backgroundColor: Colors.green,))).catchError((error)=>ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Something went wrong $error"),backgroundColor: Colors.red,)))
@@ -58,7 +60,8 @@ class _Students_ListState extends State<Students_List> {
                       Container(
                         child: Row(
                           children: [
-                            IconButton(onPressed: ()=>{}, icon: Icon(Icons.edit)),
+                            IconButton(onPressed: ()=>{Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>UpdateStudentPage(id: storedoc[index]['id'], name: storedoc[index]['name'], surname: storedoc[index]['surname'], email: storedoc[index]['email'], password: storedoc[index]['password'])))
+                            }, icon: Icon(Icons.edit)),
                             IconButton(onPressed: ()=>{delteuser(storedoc[index]['id'])}, icon: Icon(Icons.delete))
                           ],
                         ),
