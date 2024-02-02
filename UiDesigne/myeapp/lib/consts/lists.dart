@@ -44,3 +44,13 @@ const categoryTitleList = [
   womenclothing,
   furniture
 ];
+const Itemsdetailsbuttonlist = [
+  video,
+  reviwes,
+  privacyPolicy,
+  returnpolicy,
+  supportPolicy
+];
+
+const ProfileList = [myorders, whislist, messages, contact];
+const ProfileIcons = [icOrder, icMenu, icMessages, icOrder];

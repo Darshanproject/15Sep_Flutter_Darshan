@@ -8,6 +8,8 @@ const passwordHint = "********";
 const forgetpassword = "ForgetPassword?";
 const login = "Login";
 const signup = "signup";
+const Loginsu = "Login Singing Success";
+const Logoutsu = "Login Out Success";
 const createnewaccount = "Create New Accout";
 const loginwith = "Log in With";
 const retyrppassword = "Retype Password";
@@ -49,3 +51,17 @@ const womenclothing = "Women Clotheing",
     jewelery = "Jewelery",
     cellphone = "CellPhone & Tab",
     furniture = "Furniture";
+
+///items categroie string
+const video = "Video",
+    reviwes = "Reviwes",
+    sellerpolicy = "Seller Policy",
+    returnpolicy = "Return Policy",
+    supportPolicy = "Support Policy",
+    productsyoumaylike = "Product You May Like";
+
+///Profile Strings
+const whislist = "My Whislist",
+    messages = "Messages",
+    contact = "Contact",
+    myorders = "My Orders";
